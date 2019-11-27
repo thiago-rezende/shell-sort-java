@@ -34,22 +34,18 @@ public class App {
         fillRandonIntegerArray(data100U, 0, 100, 100);
         fillRandonIntegerArray(data1000U, 0, 1000, 1000);
 
-        // System.out.println("\n<Ascending Order>\n");
-        // Sort.shell(data10);
-        // Sort.shell(data100);
-        // Sort.shell(data1000);
-        // System.out.println("\n<Rescending Order>\n");
-        // Sort.shell(data10R);
-        // Sort.shell(data100R);
-        // Sort.shell(data1000R);
-        // System.out.println("\n<Random Order>\n");
-        // Sort.shell(data10U);
-        // Sort.shell(data100U);
-        // Sort.shell(data1000U);
-
-        Integer[] arr = new Integer[] { 0, 4, 2, 3, 1 };
-        Sort.shell(arr);
-        showIntegerArray(arr);
+        System.out.println("\n<Ascending Order>\n");
+        Sort.shell(data10);
+        Sort.shell(data100);
+        Sort.shell(data1000);
+        System.out.println("\n<Rescending Order>\n");
+        Sort.shell(data10R);
+        Sort.shell(data100R);
+        Sort.shell(data1000R);
+        System.out.println("\n<Random Order>\n");
+        Sort.shell(data10U);
+        Sort.shell(data100U);
+        Sort.shell(data1000U);
 
     }
 

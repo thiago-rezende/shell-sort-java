@@ -8,25 +8,29 @@ public class Sort {
     public static void shell(Integer[] arr) {
         int comparations = 0;
         int movements = 0;
-        int gap;
+        int gap = arr.length / 2;
+
         System.out.println(" - sorting [" + arr.length + "] -");
-        for (gap = arr.length / 2; gap > 0; gap /= 2) {
+        // System.out.print("gap :" + gap + " ");
+        // showIntegerArray(arr);
+
+        for (; gap > 0; gap /= 2) {
             for (int i = gap; i < arr.length; i += 1) {
 
                 int temp = arr[i];
                 int j;
-                System.out.print("gap :" + gap + " ");
-                showIntegerArray(arr);
+
                 for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
                     arr[j] = arr[j - gap];
                     movements++;
                 }
                 arr[j] = temp;
+                // System.out.print("gap :" + gap + " ");
+                // showIntegerArray(arr);
                 comparations++;
             }
         }
-        System.out.print("gap :" + gap + " ");
-        showIntegerArray(arr);
+
         System.out.println("Copmarations: " + comparations);
         System.out.println("Movements: " + movements + "\n");
     }
