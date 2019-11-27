@@ -9,11 +9,85 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Sort<Integer> sort = new Sort<>();
 
-        Integer[] data = new Integer[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        Integer[] data10 = new Integer[10];
+        Integer[] data100 = new Integer[100];
+        Integer[] data1000 = new Integer[1000];
 
-        sort.shell(data);
+        fillIntegerArray(data10, true, 0, 9);
+        fillIntegerArray(data100, true, 0, 99);
+        fillIntegerArray(data1000, true, 0, 999);
 
+        Integer[] data10R = new Integer[10];
+        Integer[] data100R = new Integer[100];
+        Integer[] data1000R = new Integer[1000];
+
+        fillIntegerArray(data10R, false, 0, 9);
+        fillIntegerArray(data100R, false, 0, 99);
+        fillIntegerArray(data1000R, false, 0, 999);
+
+        Integer[] data10U = new Integer[10];
+        Integer[] data100U = new Integer[100];
+        Integer[] data1000U = new Integer[1000];
+
+        fillRandonIntegerArray(data10U, 0, 10, 10);
+        fillRandonIntegerArray(data100U, 0, 100, 100);
+        fillRandonIntegerArray(data1000U, 0, 1000, 1000);
+
+        // System.out.println("\n<Ascending Order>\n");
+        // Sort.shell(data10);
+        // Sort.shell(data100);
+        // Sort.shell(data1000);
+        // System.out.println("\n<Rescending Order>\n");
+        // Sort.shell(data10R);
+        // Sort.shell(data100R);
+        // Sort.shell(data1000R);
+        // System.out.println("\n<Random Order>\n");
+        // Sort.shell(data10U);
+        // Sort.shell(data100U);
+        // Sort.shell(data1000U);
+
+        Integer[] arr = new Integer[] { 0, 4, 2, 3, 1 };
+        Sort.shell(arr);
+        showIntegerArray(arr);
+
+    }
+
+    public static void fillIntegerArray(Integer[] data, boolean ascending, int min, int max) {
+        if (ascending) {
+            for (int i = min; i <= max; i++) {
+                data[i] = i;
+            }
+
+            return;
+        } else {
+            for (int i = max, j = 0; i >= min; i--, j++) {
+                data[j] = i;
+            }
+
+            return;
+        }
+    }
+
+    public static void fillRandonIntegerArray(Integer[] data, int min, int max, int size) {
+        for (int i = 0; i < size; i++) {
+            data[i] = (int) (Math.random() * ((max - min) + 1)) + min;
+        }
+    }
+
+    public static void showIntegerArray(Integer[] data) {
+        System.out.print("[");
+
+        if (data.length == 0) {
+            System.out.print("]");
+            return;
+        }
+
+        for (int i = 0; i < data.length; i++) {
+            if (i == data.length - 1)
+                System.out.println(data[i] + "]");
+            else
+                System.out.print(data[i] + ", ");
+        }
     }
 }
