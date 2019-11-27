@@ -31,41 +31,6 @@ public class Sort {
         System.out.println("Movements: " + movements + "\n");
     }
 
-    public static void shSort(Integer[] data) {
-        int h = 1;
-        int n = data.length;
-        int comparations = 0;
-        int movements = 0;
-
-        System.out.println("-- sorting --");
-
-        while (h < n) {
-            h = h * 3 + 1;
-        }
-
-        h = h / 3;
-        int c, j;
-
-        while (h > 0) {
-            for (int i = h; i < n; i++) {
-                c = data[i];
-                j = i;
-                showIntegerArray(data);
-                while (j >= h && data[j - h] > c) {
-                    comparations++;
-                    data[j] = data[j - h];
-                    j = j - h;
-                }
-                data[j] = c;
-                movements++;
-            }
-            h = h / 2;
-        }
-
-        System.out.println("Copmarations: " + comparations);
-        System.out.println("Movements: " + movements);
-    }
-
     public static void showIntegerArray(Integer[] data) {
         System.out.print("[");
 
