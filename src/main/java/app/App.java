@@ -47,6 +47,10 @@ public class App {
         Sort.shell(data100U);
         Sort.shell(data1000U);
 
+        Integer[] arr = new Integer[] { 0, 4, 2, 1, 5, 3 };
+        Sort.shell(arr);
+        showIntegerArray(arr);
+
     }
 
     public static void fillIntegerArray(Integer[] data, boolean ascending, int min, int max) {

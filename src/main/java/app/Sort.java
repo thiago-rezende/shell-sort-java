@@ -22,6 +22,10 @@ public class Sort {
 
                 for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
                     arr[j] = arr[j - gap];
+
+                    if (j != i)
+                        comparations++;
+
                     movements++;
                 }
                 arr[j] = temp;
