@@ -4,10 +4,6 @@
 package app;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
-
     public static void main(String[] args) {
 
         Integer[] data10 = new Integer[10];
@@ -38,7 +34,7 @@ public class App {
         Sort.shell(data10);
         Sort.shell(data100);
         Sort.shell(data1000);
-        System.out.println("\n<Rescending Order>\n");
+        System.out.println("\n<Descending Order>\n");
         Sort.shell(data10R);
         Sort.shell(data100R);
         Sort.shell(data1000R);
